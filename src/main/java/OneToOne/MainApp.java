@@ -23,6 +23,7 @@ public class MainApp {
 		
 		//sess.save(indetail);
 		System.out.println(indetail.getInstructor());
+		sess.delete(indetail);
 		sess.getTransaction().commit();
 	}
 }
