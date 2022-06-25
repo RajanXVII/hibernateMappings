@@ -18,11 +18,11 @@ public class MainApp {
 		Session sess=sf.getCurrentSession();
 		sess.beginTransaction();
 		
-		InstructorDetail indetail=sess.get(InstructorDetail.class, 102);
+		InstructorDetail indetail=sess.get(InstructorDetail.class, 107);
 		//indetail.setInstructor(instr);
-		
+		indetail.getInstructor().setInstructorDetail(null);
 		//sess.save(indetail);
-		System.out.println(indetail.getInstructor());
+		//System.out.println(indetail.getInstructor());
 		sess.delete(indetail);
 		sess.getTransaction().commit();
 	}
