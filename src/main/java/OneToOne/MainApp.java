@@ -18,19 +18,22 @@ public class MainApp {
 		Session sess=sf.getCurrentSession();
 		sess.beginTransaction();
 		
-		  Instructor instructor=new Instructor("pratik", "sonvane",
-		  "pratik17.rs@gmail.com"); InstructorDetail instructorDetail=new
-		  InstructorDetail("pratikyt", "teaching");
-		 
-		int id=4;
-		//Instructor instructor=sess.get(Instructor.class, id);
-		instructor.setInstructorDetail(instructorDetail);
-		sess.save(instructor);
-		//sess.delete(instructor);
 		/*
-		 * if(Objects.nonNull(instructor)) { System.out.println("deleted!!"); }
+		 * Instructor instructor=new Instructor("pratik", "sonvane",
+		 * "pratik17.rs@gmail.com"); InstructorDetail instructorDetail=new
+		 * InstructorDetail("pratikyt", "teaching");
 		 */
-		System.out.println("persisted!!");
+		 
+		int id=5;
+		Instructor instructor=sess.get(Instructor.class, id);
+		/*
+		 * instructor.setInstructorDetail(instructorDetail); sess.save(instructor);
+		 */
+		sess.delete(instructor);
+		
+		  if(Objects.nonNull(instructor)) { System.out.println("deleted!!"); }
+		 
+		//System.out.println("persisted!!");
 		sess.getTransaction().commit();
 	}
 }
